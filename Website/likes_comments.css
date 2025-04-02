@@ -1,0 +1,42 @@
+
+/* Vibrant comment styling for dark theme */
+.comments-container {
+    margin-top: 12px;
+    border-top: 1px solid #ffce00;
+    padding-top: 12px;
+    font-size: 0.95rem;
+    color: #fff;
+    background-color: #2d2d2d;
+    border-radius: 10px;
+}
+
+.comment-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid #ffce00;
+    border-radius: 10px;
+    margin-top: 10px;
+    background-color: #1c1c1c;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.comment-input::placeholder {
+    color: #ffc;
+}
+
+.comment-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 12px;
+}
+
+.comment-list li {
+    margin: 8px 0;
+    background: #3e3e3e;
+    padding: 10px 14px;
+    border-radius: 8px;
+    color: #fff;
+    border: 1px solid #ffce00;
+    box-shadow: 0 0 6px rgba(255, 206, 0, 0.3);
+}

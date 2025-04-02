@@ -1,0 +1,136 @@
+/* General styles for the info page */
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color); /* Use global background color */
+    color: var(--text-color); /* Use global text color */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #444; /* Slightly lighter gray for the container */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+}
+
+h1 {
+    font-size: 2.5em;
+    color: var(--text-color); /* Use global text color */
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: var(--button-hover-background-color); /* Use global hover color for subheadings */
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: var(--text-color); /* Use global text color */
+    text-align: center;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+ul li {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: var(--text-color); /* Use global text color */
+}
+
+/* Logo styling */
+.logo-text {
+    display: block;
+    margin: 0 auto 20px; /* Center the logo and add spacing below */
+    max-width: 200px; /* Slightly larger logo */
+    height: auto;
+    border: 3px solid var(--text-color); /* Add a border matching the text color */
+    border-radius: 10px; /* Slightly round the corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a shadow for decoration */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    p, ul li {
+        font-size: 1em;
+    }
+
+    .logo-text {
+        max-width: 150px; /* Adjust logo size for smaller screens */
+    }
+}
+
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+/* Navbar icons */
+nav a {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+nav a i {
+    font-size: 1.2em; /* Icon size */
+}
+
+nav a:hover {
+    color: var(--button-hover-background-color);
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Position the underline just below the text */
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--button-background-color); /* Background color for the hover effect */
+    transition: width 0.3s ease; /* Smooth animation for the underline */
+}
+
+
+
+nav a.active {
+    font-weight: bold;
+    color:black;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}

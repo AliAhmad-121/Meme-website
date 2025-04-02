@@ -1,0 +1,316 @@
+@import url('styles.css');
+
+body {
+    overflow-y: auto; /* Ensure the body allows vertical scrolling */
+}
+
+/* App bar styles */
+.app-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--button-background-color);
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    max-width: 50px;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+/* Navbar icons */
+nav a {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+nav a i {
+    font-size: 1.2em; /* Icon size */
+}
+
+nav a:hover {
+    color: var(--button-hover-background-color);
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Position the underline just below the text */
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--button-background-color); /* Background color for the hover effect */
+    transition: width 0.3s ease; /* Smooth animation for the underline */
+}
+
+
+
+nav a.active {
+    font-weight: bold;
+    color:black;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Meme container styles */
+.meme-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 80%;
+}
+
+/* Meme styles */
+.meme {
+    position: relative;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: var(--background-color);
+    border: 1px solid var(--button-background-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+
+.meme-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+
+.meme-image {
+    max-width: 100%;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+.meme-title {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: var(--text-color);
+}
+
+/* Buttons container */
+.meme .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* Buttons styles */
+.meme .buttons button {
+    background-color: var(--button-background-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.meme .buttons button:hover {
+    background-color: var(--button-hover-background-color);
+    transform: scale(1.05);
+}
+
+/* Loader styles */
+.loader {
+    margin: 0 0 2em;
+    height: 100px;
+    width: 20%;
+    text-align: center;
+    padding: 1em;
+    margin: 0 auto 1em;
+    display: inline-block;
+    vertical-align: top;
+}
+
+svg path,
+svg rect {
+    fill: var(--button-background-color);
+}
+
+/* Alert styles */
+.alert {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4caf50; /* Green background */
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.alert.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.alert.error {
+    background-color: #f44336; /* Red background for errors */
+}
+
+/* Save button with icon */
+.save-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+    background-color: var(--button-background-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.save-btn i {
+    font-size: 1.2em; /* Icon size */
+}
+
+.save-btn:active {
+    transform: scale(0.95); /* Shrinks the button slightly when pressed */
+}
+
+.save-btn.saved {
+    background-color: #4caf50; /* Green background for saved state */
+    color: white;
+    cursor: default; /* Disable pointer cursor */
+    pointer-events: none; /* Prevent further interaction */
+}
+/* --- feed_buttons.css --- */
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.like-btn, .save-btn, .add-comment-btn {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    background-color: #e0b100;
+    color: black;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.like-btn:hover, .save-btn:hover, .add-comment-btn:hover {
+    background-color: #ffcc00;
+}
+
+.comment-input-box {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.comment-input {
+    flex-grow: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+    background: #222;
+    color: white;
+    border: 2px solid #e0b100;
+}
+
+.add-comment-btn {
+    padding: 8px 12px;
+}
+
+/* --- likes_comments.css --- */
+
+/* Vibrant comment styling for dark theme */
+.comments-container {
+    margin-top: 12px;
+    border-top: 1px solid #ffce00;
+    padding-top: 12px;
+    font-size: 0.95rem;
+    color: #fff;
+    background-color: #2d2d2d;
+    border-radius: 10px;
+}
+
+.comment-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid #ffce00;
+    border-radius: 10px;
+    margin-top: 10px;
+    background-color: #1c1c1c;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.comment-input::placeholder {
+    color: #ffc;
+}
+
+.comment-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 12px;
+}
+
+.comment-list li {
+    margin: 8px 0;
+    background: #3e3e3e;
+    padding: 10px 14px;
+    border-radius: 8px;
+    color: #fff;
+    border: 1px solid #ffce00;
+    box-shadow: 0 0 6px rgba(255, 206, 0, 0.3);
+}
+
+/* --- profile_feed.css --- */
+

@@ -1,0 +1,33 @@
+
+/* Custom Alert Styling */
+.custom-alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 14px 22px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 6px;
+    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.custom-alert.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Success Alert */
+.custom-alert.success {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+/* Error Alert */
+.custom-alert.error {
+    background-color: #f44336;
+    color: #fff;
+}
